@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index 2</title>
+</head>
+<body>
+	{% if ar %}
+            <label>Area Name: </label>
+    		<p> {{ar}} </p>
+  	{% endif %}
+  	
+  	{% if profile_pic %}
+            <h2>Instagram Display Pic: </h2> <br />
+    		<!-- <p> {{ar}} </p> -->
+
+
+			<img src="{{ profile_pic }}" alt="img" /> <br />  
+			<!-- class="img-responsive img-rounded -->
+  	{% endif %}
+
+  	{% if liked_pic %}
+            <h2>Most liked Pic on Instagram: </h2> <br />
+    		<!-- <p> {{ar}} </p> -->
+
+    		<!-- <p>{{liked_pic}}</p> -->
+			<img src="{{ liked_pic }}" alt="img" /> <br />
+			{% if caption %}
+			<h3> The caption for this pic was {{caption}} </h3>
+			{% endif %}
+			{% if likes %}
+			<h3> The Number of likes for above pic : {{likes}} </h3>
+			{% endif %}
+  	{% endif %}
+  	<p align="center"> The area's latitude : {{lat}} & Longitude : {{lon}} </p>
+
+  	 <h3 align="center"> The Area is marked on the google maps below </h3>
+  	 <div class="mp" align="center">{% load easy_maps_tags %}
+
+<!-- Default map with 300x400 dimensions -->
+
+
+{% easy_map ar 300 400 %}
+        
+          
+          </div>
+
+
+</body>
+</html>

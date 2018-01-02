@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hurray!</title>
+    </head>
+    <body>
+        <h1>Karan! I am Learning Django!</h1>
+        <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+
+    </body>
+</html>
